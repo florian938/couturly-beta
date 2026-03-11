@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<meta name="theme-color" content="#3D0026"/>
+<title>COUTURLY — Rejoindre la liste d'attente bêta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bordeaux: #3D0026;
+  --bordeaux2: #5C1A3E;
+  --bordeaux3: #7B2D58;
+  --rose: #E91E63;
+  --rose-d: #C2185B;
+  --rose-l: #FCE4EC;
+  --rose-m: #F48FB1;
+  --gold: #F59E0B;
+  --gold-l: #FEF3C7;
+  --teal: #0D9488;
+  --teal-l: #CCFBF1;
+  --bg: #FFF8F9;
+  --card: #FFFFFF;
+  --border: #F0D0DC;
+  --ink: #1A0010;
+  --mid: #6B3050;
+  --dim: #B08898;
+  --success: #10B981;
+  --r: 14px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, var(--bordeaux) 0%, var(--bordeaux2) 55%, var(--bordeaux3) 100%);
+  padding: 56px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute; top:-80px; right:-80px;
+  width:300px; height:300px;
+  background: radial-gradient(circle, rgba(233,30,99,.18) 0%, transparent 70%);
+  border-radius:50%;
+}
+.hero::after {
+  content:'';
+  position:absolute; bottom:-60px; left:-60px;
+  width:220px; height:220px;
+  background: radial-gradient(circle, rgba(245,158,11,.12) 0%, transparent 70%);
+  border-radius:50%;
+}
+.hero-scissors {
+  width:72px; height:72px;
+  background: rgba(233,30,99,.25);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:32px;
+  margin: 0 auto 16px;
+  position:relative; z-index:1;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  position:relative; z-index:1;
+}
+.hero-sub {
+  font-size: 13px;
+  color: var(--rose-m);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  position:relative; z-index:1;
+}
+.hero-desc {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255,255,255,.75);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  position:relative; z-index:1;
+}
+
+/* Badge liste d'attente */
+.waitlist-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,158,11,.18);
+  border: 1px solid rgba(245,158,11,.4);
+  border-radius: 50px;
+  padding: 8px 18px;
+  margin-top: 20px;
+  position:relative; z-index:1;
+}
+.waitlist-badge span {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* Stats bar */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.1);
+  margin-top: 32px;
+  position:relative; z-index:1;
+}
+.stat-item {
+  flex:1; max-width:120px;
+  padding: 14px 8px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+.stat-item:last-child { border-right:none; }
+.stat-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  display:block;
+}
+.stat-lbl {
+  font-size: 10px;
+  color: var(--rose-m);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── MAIN ── */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 28px 16px 60px;
+}
+
+/* Info box */
+.info-box {
+  background: linear-gradient(135deg, var(--bordeaux) 0%, var(--bordeaux2) 100%);
+  border-radius: var(--r);
+  padding: 20px 22px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.info-box .info-icon {
+  font-size: 24px;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.info-box p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.65;
+}
+.info-box strong { color: var(--gold); }
+
+/* Section block */
+.section-block {
+  margin-bottom: 32px;
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bordeaux);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+.section-label .s-num {
+  background: var(--rose);
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+/* Question card */
+.q-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 20px 20px 16px;
+  margin-bottom: 12px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.q-card:focus-within {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(233,30,99,.08);
+}
+.q-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin-bottom: 12px;
+  line-height: 1.5;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.q-num {
+  background: var(--rose-l);
+  color: var(--rose);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 50px;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.q-required { color: var(--rose); margin-left:2px; }
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--bg);
+  outline: none;
+  transition: border-color .2s, background .2s;
+  -webkit-appearance: none;
+}
+input:focus, textarea:focus {
+  border-color: var(--rose);
+  background: #fff;
+}
+textarea { min-height: 90px; resize: vertical; }
+::placeholder { color: var(--dim); }
+
+/* Radio & Checkbox */
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.options-grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.opt-item {
+  position: relative;
+}
+.opt-item input { display:none; }
+.opt-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mid);
+  transition: all .18s;
+  user-select: none;
+  line-height: 1.4;
+}
+.opt-item label:hover {
+  border-color: var(--rose-m);
+  background: var(--rose-l);
+}
+.opt-dot {
+  width: 18px; height: 18px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  flex-shrink:0;
+  transition: all .18s;
+  display:flex; align-items:center; justify-content:center;
+}
+.opt-item.is-checkbox .opt-dot {
+  border-radius: 5px;
+}
+.opt-item input:checked + label {
+  border-color: var(--rose);
+  background: var(--rose-l);
+  color: var(--bordeaux);
+}
+.opt-item input:checked + label .opt-dot {
+  background: var(--rose);
+  border-color: var(--rose);
+}
+.opt-item input:checked + label .opt-dot::after {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+.opt-item.is-checkbox input:checked + label .opt-dot::after {
+  width: 5px; height: 8px;
+  border: 2px solid white;
+  border-top: none; border-left: none;
+  border-radius: 1px;
+  transform: rotate(45deg) translate(-1px, -1px);
+  background: transparent;
+}
+
+/* Confidentialité */
+.conf-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all .18s;
+}
+.conf-item:hover { border-color: var(--rose-m); background: var(--rose-l); }
+.conf-item input { display:none; }
+.conf-box {
+  width: 22px; height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  flex-shrink:0;
+  margin-top:1px;
+  transition: all .18s;
+  display:flex; align-items:center; justify-content:center;
+}
+.conf-item.checked .conf-box {
+  background: var(--rose);
+  border-color: var(--rose);
+}
+.conf-item.checked .conf-box::after {
+  content:'';
+  display:block;
+  width: 5px; height: 9px;
+  border: 2px solid white;
+  border-top:none; border-left:none;
+  border-radius:1px;
+  transform: rotate(45deg) translate(-1px,-1px);
+}
+.conf-item.checked { border-color: var(--rose); background: var(--rose-l); }
+.conf-text {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.5;
+  font-weight: 600;
+}
+.conf-item.checked .conf-text { color: var(--bordeaux); }
+
+/* Error state */
+.q-card.error {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239,68,68,.08);
+}
+.err-msg {
+  font-size: 11.5px;
+  color: #EF4444;
+  margin-top: 6px;
+  display: none;
+  font-weight: 600;
+}
+.q-card.error .err-msg { display:block; }
+
+/* Submit btn */
+.submit-wrap { margin-top: 32px; }
+.btn-submit {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-d) 100%);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: .5px;
+  box-shadow: 0 6px 24px rgba(233,30,99,.35);
+  transition: transform .15s, box-shadow .15s, opacity .15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(233,30,99,.45); }
+.btn-submit:active { transform: translateY(0); }
+.btn-submit:disabled { opacity: .6; cursor:not-allowed; transform:none; }
+.btn-submit .spinner {
+  width:20px; height:20px;
+  border: 2px solid rgba(255,255,255,.4);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation: spin .7s linear infinite;
+  display:none;
+}
+.btn-submit.loading .spinner { display:block; }
+.btn-submit.loading .btn-text { display:none; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* Progress bar */
+.progress-wrap {
+  position: sticky;
+  top:0; z-index:100;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+}
+.progress-info {
+  display:flex; justify-content:space-between;
+  font-size:11px; font-weight:700;
+  color: var(--mid);
+  margin-bottom:6px;
+}
+.progress-bar {
+  height:4px; background: var(--rose-l); border-radius:50px; overflow:hidden;
+}
+.progress-fill {
+  height:100%; background: linear-gradient(to right, var(--rose), var(--gold));
+  border-radius:50px;
+  transition: width .4s ease;
+  width:0%;
+}
+
+/* Success screen */
+#success-screen {
+  display:none;
+  position:fixed; inset:0; z-index:999;
+  background: linear-gradient(160deg, var(--bordeaux) 0%, var(--bordeaux2) 100%);
+  flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center;
+  padding:32px;
+}
+#success-screen.show { display:flex; }
+.success-circle {
+  width:100px; height:100px;
+  background: rgba(233,30,99,.25);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:44px;
+  margin-bottom:24px;
+  animation: popIn .5s ease;
+}
+@keyframes popIn {
+  0%{transform:scale(0);opacity:0}
+  70%{transform:scale(1.15)}
+  100%{transform:scale(1);opacity:1}
+}
+.success-title {
+  font-family:'Playfair Display',serif;
+  font-size:28px; font-weight:900;
+  color:#fff; margin-bottom:12px;
+}
+.success-body {
+  font-size:14px; color:rgba(255,255,255,.75);
+  line-height:1.7; max-width:360px;
+  margin:0 auto 28px;
+}
+.success-body strong { color:var(--gold); }
+.success-contact {
+  background:rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:16px 24px;
+  font-size:13px; color:rgba(255,255,255,.6);
+  margin-top:4px;
+}
+
+/* Footer */
+.form-footer {
+  text-align:center;
+  margin-top:32px;
+  padding-top:24px;
+  border-top:1px solid var(--border);
+}
+.form-footer p {
+  font-size:12px; color:var(--dim);
+  line-height:1.6;
+}
+.form-footer strong { color:var(--mid); }
+
+/* Animations */
+.q-card { animation: fadeUp .3s ease both; }
+@keyframes fadeUp {
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<!-- ── PROGRESS ── -->
+<div class="progress-wrap" id="progress-wrap" style="display:none">
+  <div class="progress-info">
+    <span>Votre candidature</span>
+    <span id="prog-pct">0%</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-scissors">✂</div>
+  <h1>COUTURLY</h1>
+  <p class="hero-sub">Atelier Numérique des Stylistes Africains</p>
+  <p class="hero-desc">
+    La première application dédiée aux stylistes africains — mesures digitales, calculs automatiques, factures PDF, agenda intelligent.
+  </p>
+  <div class="waitlist-badge">
+    <span>⏳</span>
+    <span>Liste d'attente prioritaire — 20 places bêta</span>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-num">20</span><span class="stat-lbl">Places bêta</span></div>
+    <div class="stat-item"><span class="stat-num">Gratuit</span><span class="stat-lbl">Pendant le test</span></div>
+    <div class="stat-item"><span class="stat-num">30j</span><span class="stat-lbl">De test</span></div>
+  </div>
+</div>
+
+<!-- ── CONTAINER ── -->
+<div class="container">
+
+  <!-- Info box -->
+  <div class="info-box">
+    <div class="info-icon">💡</div>
+    <p>
+      <strong>Vous ne recevez pas d'accès immédiatement.</strong><br/>
+      COUTURLY est en phase de finalisation. En vous inscrivant aujourd'hui, vous rejoignez notre liste d'attente prioritaire. 
+      Dès que l'application est prête, vous serez parmi les <strong>premiers contactés par WhatsApp</strong> avec votre lien d'accès exclusif.
+    </p>
+  </div>
+
+  <!-- ── FORM ── -->
+  <form id="betaForm" action="https://formspree.io/f/xwvrleeb" method="POST" novalidate>
+
+    <!-- Champ caché pour identifier le formulaire -->
+    <input type="hidden" name="_subject" value="🎉 Nouvelle candidature COUTURLY Bêta"/>
+    <input type="hidden" name="_next" value=""/>
+
+    <!-- ═══ SECTION A ═══ -->
+    <div class="section-block">
+      <div class="section-label">
+        <span class="s-num">A</span>
+        Informations personnelles
+      </div>
+
+      <!-- Q1 -->
+      <div class="q-card" id="qc1">
+        <div class="q-label"><span class="q-num">Q1</span> Prénom et nom complet <span class="q-required">*</span></div>
+        <input type="text" name="nom_complet" placeholder="Ex : Kofi Mensah" required/>
+        <p class="err-msg">Ce champ est obligatoire.</p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-card" id="qc2">
+        <div class="q-label"><span class="q-num">Q2</span> Numéro WhatsApp (avec indicatif pays) <span class="q-required">*</span></div>
+        <input type="tel" name="whatsapp" placeholder="Ex : +229 01 XX XX XX" required/>
+        <p class="err-msg">Entrez un numéro WhatsApp valide avec l'indicatif pays.</p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-card" id="qc3">
+        <div class="q-label"><span class="q-num">Q3</span> Adresse email <span class="q-required">*</span></div>
+        <input type="email" name="email" placeholder="votre@email.com" required/>
+        <p class="err-msg">Entrez une adresse email valide.</p>
+      </div>
+
+      <!-- Q4 -->
+      <div class="q-card" id="qc4">
+        <div class="q-label"><span class="q-num">Q4</span> Ville et quartier de votre atelier <span class="q-required">*</span></div>
+        <input type="text" name="ville" placeholder="Ex : Cotonou, Cadjehoun" required/>
+        <p class="err-msg">Ce champ est obligatoire.</p>
+      </div>
+
+      <!-- Q5 -->
+      <div class="q-card" id="qc5">
+        <div class="q-label"><span class="q-num">Q5</span> Votre genre</div>
+        <div class="options-grid two-col">
+          <div class="opt-item">
+            <input type="radio" name="genre" id="g1" value="Homme"/>
+            <label for="g1"><span class="opt-dot"></span> Homme</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="genre" id="g2" value="Femme"/>
+            <label for="g2"><span class="opt-dot"></span> Femme</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="genre" id="g3" value="Préfère ne pas répondre"/>
+            <label for="g3"><span class="opt-dot"></span> Préfère ne pas répondre</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION B ═══ -->
+    <div class="section-block">
+      <div class="section-label">
+        <span class="s-num">B</span>
+        Votre activité de styliste
+      </div>
+
+      <!-- Q6 -->
+      <div class="q-card" id="qc6">
+        <div class="q-label"><span class="q-num">Q6</span> Depuis combien d'années exercez-vous la couture ? <span class="q-required">*</span></div>
+        <div class="options-grid" data-required="true" data-name="experience">
+          <div class="opt-item">
+            <input type="radio" name="experience" id="e1" value="Moins de 1 an" required/>
+            <label for="e1"><span class="opt-dot"></span> Moins de 1 an</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="experience" id="e2" value="1 à 3 ans"/>
+            <label for="e2"><span class="opt-dot"></span> 1 à 3 ans</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="experience" id="e3" value="3 à 7 ans"/>
+            <label for="e3"><span class="opt-dot"></span> 3 à 7 ans</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="experience" id="e4" value="Plus de 7 ans"/>
+            <label for="e4"><span class="opt-dot"></span> Plus de 7 ans</label>
+          </div>
+        </div>
+        <p class="err-msg">Veuillez choisir une réponse.</p>
+      </div>
+
+      <!-- Q7 -->
+      <div class="q-card" id="qc7">
+        <div class="q-label"><span class="q-num">Q7</span> Combien de clients actifs avez-vous environ ? <span class="q-required">*</span></div>
+        <div class="options-grid" data-required="true" data-name="nb_clients">
+          <div class="opt-item">
+            <input type="radio" name="nb_clients" id="c1" value="Moins de 10 clients" required/>
+            <label for="c1"><span class="opt-dot"></span> Moins de 10 clients</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="nb_clients" id="c2" value="10 à 30 clients"/>
+            <label for="c2"><span class="opt-dot"></span> 10 à 30 clients</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="nb_clients" id="c3" value="30 à 60 clients"/>
+            <label for="c3"><span class="opt-dot"></span> 30 à 60 clients</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="nb_clients" id="c4" value="Plus de 60 clients"/>
+            <label for="c4"><span class="opt-dot"></span> Plus de 60 clients</label>
+          </div>
+        </div>
+        <p class="err-msg">Veuillez choisir une réponse.</p>
+      </div>
+
+      <!-- Q8 -->
+      <div class="q-card">
+        <div class="q-label"><span class="q-num">Q8</span> Quels types de tenues réalisez-vous ? (Plusieurs réponses possibles)</div>
+        <div class="options-grid two-col">
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="tenues[]" id="t1" value="Robes de soirée"/>
+            <label for="t1"><span class="opt-dot"></span> Robes de soirée</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="tenues[]" id="t2" value="Boubous & Grand boubou"/>
+            <label for="t2"><span class="opt-dot"></span> Boubous</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="tenues[]" id="t3" value="Bazin brodé"/>
+            <label for="t3"><span class="opt-dot"></span> Bazin brodé</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="tenues[]" id="t4" value="Wax & Pagne"/>
+            <label for="t4"><span class="opt-dot"></span> Wax & Pagne</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="tenues[]" id="t5" value="Tenues de mariage"/>
+            <label for="t5"><span class="opt-dot"></span> Mariage</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="tenues[]" id="t6" value="Costumes homme"/>
+            <label for="t6"><span class="opt-dot"></span> Costumes</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="tenues[]" id="t7" value="Kaftan & Agbada"/>
+            <label for="t7"><span class="opt-dot"></span> Kaftan & Agbada</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="tenues[]" id="t8" value="Enfants"/>
+            <label for="t8"><span class="opt-dot"></span> Enfants</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="q-card">
+        <div class="q-label"><span class="q-num">Q9</span> Avez-vous des apprentis ou employés dans votre atelier ?</div>
+        <div class="options-grid">
+          <div class="opt-item">
+            <input type="radio" name="equipe" id="eq1" value="Non, je travaille seul(e)"/>
+            <label for="eq1"><span class="opt-dot"></span> Non, je travaille seul(e)</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="equipe" id="eq2" value="Oui, 1 à 2 personnes"/>
+            <label for="eq2"><span class="opt-dot"></span> Oui, 1 à 2 personnes</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="equipe" id="eq3" value="Oui, 3 à 5 personnes"/>
+            <label for="eq3"><span class="opt-dot"></span> Oui, 3 à 5 personnes</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="equipe" id="eq4" value="Oui, plus de 5 personnes"/>
+            <label for="eq4"><span class="opt-dot"></span> Oui, plus de 5 personnes</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION C ═══ -->
+    <div class="section-block">
+      <div class="section-label">
+        <span class="s-num">C</span>
+        Votre rapport au numérique
+      </div>
+
+      <!-- Q10 -->
+      <div class="q-card" id="qc10">
+        <div class="q-label"><span class="q-num">Q10</span> Quel téléphone utilisez-vous ? <span class="q-required">*</span></div>
+        <div class="options-grid" data-required="true" data-name="telephone">
+          <div class="opt-item">
+            <input type="radio" name="telephone" id="ph1" value="Android (Samsung, Tecno, Infinix, Itel…)" required/>
+            <label for="ph1"><span class="opt-dot"></span> 📱 Android (Samsung, Tecno, Infinix…)</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="telephone" id="ph2" value="iPhone (Apple)"/>
+            <label for="ph2"><span class="opt-dot"></span> 🍎 iPhone</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="telephone" id="ph3" value="Les deux"/>
+            <label for="ph3"><span class="opt-dot"></span> Les deux</label>
+          </div>
+        </div>
+        <p class="err-msg">Veuillez choisir une réponse.</p>
+      </div>
+
+      <!-- Q11 -->
+      <div class="q-card">
+        <div class="q-label"><span class="q-num">Q11</span> Comment gérez-vous vos clients et mesures actuellement ? (Plusieurs réponses possibles)</div>
+        <div class="options-grid two-col">
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="gestion_actuelle[]" id="ga1" value="Carnet papier"/>
+            <label for="ga1"><span class="opt-dot"></span> 📓 Carnet papier</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="gestion_actuelle[]" id="ga2" value="Mémoire / de tête"/>
+            <label for="ga2"><span class="opt-dot"></span> 🧠 De tête</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="gestion_actuelle[]" id="ga3" value="Photos téléphone"/>
+            <label for="ga3"><span class="opt-dot"></span> 📸 Photos</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="gestion_actuelle[]" id="ga4" value="Excel / Google Sheets"/>
+            <label for="ga4"><span class="opt-dot"></span> 📊 Excel/Sheets</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="gestion_actuelle[]" id="ga5" value="Autre application"/>
+            <label for="ga5"><span class="opt-dot"></span> 📱 Autre app</label>
+          </div>
+          <div class="opt-item is-checkbox">
+            <input type="checkbox" name="gestion_actuelle[]" id="ga6" value="Pas de système précis"/>
+            <label for="ga6"><span class="opt-dot"></span> 🤷 Pas de système</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="q-card">
+        <div class="q-label"><span class="q-num">Q12</span> Êtes-vous à l'aise pour utiliser une nouvelle application ?</div>
+        <div class="options-grid">
+          <div class="opt-item">
+            <input type="radio" name="aise_tech" id="at1" value="Très à l'aise — j'aime les nouvelles technologies"/>
+            <label for="at1"><span class="opt-dot"></span> Très à l'aise — j'adore la technologie</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="aise_tech" id="at2" value="Assez à l'aise — j'apprends vite"/>
+            <label for="at2"><span class="opt-dot"></span> Assez à l'aise — j'apprends vite</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="aise_tech" id="at3" value="Peu à l'aise — j'ai besoin d'aide au départ"/>
+            <label for="at3"><span class="opt-dot"></span> Peu à l'aise — j'ai besoin d'aide au départ</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="aise_tech" id="at4" value="Pas à l'aise — mais motivé(e)"/>
+            <label for="at4"><span class="opt-dot"></span> Pas à l'aise — mais très motivé(e)</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION D ═══ -->
+    <div class="section-block">
+      <div class="section-label">
+        <span class="s-num">D</span>
+        Vos besoins & motivations
+      </div>
+
+      <!-- Q13 -->
+      <div class="q-card" id="qc13">
+        <div class="q-label"><span class="q-num">Q13</span> Quelle est votre plus grande frustration dans la gestion de votre atelier ? <span class="q-required">*</span></div>
+        <textarea name="frustration" placeholder="Décrivez ce qui vous pose le plus de problèmes au quotidien…" required></textarea>
+        <p class="err-msg">Veuillez décrire votre frustration principale.</p>
+      </div>
+
+      <!-- Q14 -->
+      <div class="q-card" id="qc14">
+        <div class="q-label"><span class="q-num">Q14</span> Quelle fonctionnalité vous serait la plus utile en premier ? <span class="q-required">*</span></div>
+        <div class="options-grid" data-required="true" data-name="fonc_prioritaire">
+          <div class="opt-item">
+            <input type="radio" name="fonc_prioritaire" id="fp1" value="Carnet de mesures digital sécurisé" required/>
+            <label for="fp1"><span class="opt-dot"></span> 📏 Carnet de mesures digital</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="fonc_prioritaire" id="fp2" value="Calculs automatiques des formules de coupe"/>
+            <label for="fp2"><span class="opt-dot"></span> ✂ Calculs automatiques de coupe</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="fonc_prioritaire" id="fp3" value="Suivi des commandes avec étapes visuelles"/>
+            <label for="fp3"><span class="opt-dot"></span> 📦 Suivi visuel des commandes</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="fonc_prioritaire" id="fp4" value="Génération de factures PDF professionnelles"/>
+            <label for="fp4"><span class="opt-dot"></span> 🧾 Factures PDF professionnelles</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="fonc_prioritaire" id="fp5" value="Agenda et rappels de rendez-vous"/>
+            <label for="fp5"><span class="opt-dot"></span> 📅 Agenda et rappels RDV</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="fonc_prioritaire" id="fp6" value="Tableau de bord des revenus"/>
+            <label for="fp6"><span class="opt-dot"></span> 📊 Tableau de bord revenus</label>
+          </div>
+        </div>
+        <p class="err-msg">Veuillez choisir une réponse.</p>
+      </div>
+
+      <!-- Q15 -->
+      <div class="q-card">
+        <div class="q-label"><span class="q-num">Q15</span> Combien seriez-vous prêt(e) à payer si vous êtes satisfait(e) ?</div>
+        <div class="options-grid">
+          <div class="opt-item">
+            <input type="radio" name="prix_acceptable" id="pr1" value="Rien pour l'instant"/>
+            <label for="pr1"><span class="opt-dot"></span> Rien pour l'instant</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="prix_acceptable" id="pr2" value="500 à 1 000 FCFA par mois"/>
+            <label for="pr2"><span class="opt-dot"></span> 500 à 1 000 FCFA / mois</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="prix_acceptable" id="pr3" value="1 000 à 2 500 FCFA par mois"/>
+            <label for="pr3"><span class="opt-dot"></span> 1 000 à 2 500 FCFA / mois</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="prix_acceptable" id="pr4" value="2 500 à 5 000 FCFA par mois"/>
+            <label for="pr4"><span class="opt-dot"></span> 2 500 à 5 000 FCFA / mois</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="prix_acceptable" id="pr5" value="Plus si ça vaut le coup"/>
+            <label for="pr5"><span class="opt-dot"></span> Plus si ça vaut vraiment le coup</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION E ═══ -->
+    <div class="section-block">
+      <div class="section-label">
+        <span class="s-num">E</span>
+        Votre engagement
+      </div>
+
+      <!-- Q16 -->
+      <div class="q-card" id="qc16">
+        <div class="q-label"><span class="q-num">Q16</span> Pouvez-vous tester l'application pendant 30 jours ? <span class="q-required">*</span></div>
+        <div class="options-grid" data-required="true" data-name="engagement_30j">
+          <div class="opt-item">
+            <input type="radio" name="engagement_30j" id="en1" value="Oui, absolument" required/>
+            <label for="en1"><span class="opt-dot"></span> ✅ Oui, absolument</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="engagement_30j" id="en2" value="Oui, avec quelques absences possibles"/>
+            <label for="en2"><span class="opt-dot"></span> 🟡 Oui, avec quelques absences possibles</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="engagement_30j" id="en3" value="Non, 30 jours c'est trop long"/>
+            <label for="en3"><span class="opt-dot"></span> ❌ Non, 30 jours c'est trop long</label>
+          </div>
+        </div>
+        <p class="err-msg">Veuillez choisir une réponse.</p>
+      </div>
+
+      <!-- Q17 -->
+      <div class="q-card">
+        <div class="q-label"><span class="q-num">Q17</span> Acceptez-vous de donner des retours chaque semaine (5 min) ?</div>
+        <div class="options-grid">
+          <div class="opt-item">
+            <input type="radio" name="retours_hebdo" id="rh1" value="Oui, sans problème"/>
+            <label for="rh1"><span class="opt-dot"></span> ✅ Oui, sans problème</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="retours_hebdo" id="rh2" value="Oui, mais parfois j'oublie"/>
+            <label for="rh2"><span class="opt-dot"></span> 🟡 Oui, mais parfois j'oublie</label>
+          </div>
+          <div class="opt-item">
+            <input type="radio" name="retours_hebdo" id="rh3" value="Non, c'est trop contraignant"/>
+            <label for="rh3"><span class="opt-dot"></span> ❌ Non, trop contraignant</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q18 -->
+      <div class="q-card" id="qc18">
+        <div class="q-label"><span class="q-num">Q18</span> Pourquoi seriez-vous un bon bêta-testeur pour COUTURLY ? <span class="q-required">*</span></div>
+        <textarea name="motivation" placeholder="Expliquez pourquoi vous êtes le bon profil pour tester COUTURLY…" required></textarea>
+        <p class="err-msg">Dites-nous pourquoi vous seriez un bon testeur.</p>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION F — CONFIDENTIALITÉ ═══ -->
+    <div class="section-block">
+      <div class="section-label">
+        <span class="s-num">F</span>
+        Confidentialité & Accord
+      </div>
+
+      <div class="q-card" id="qc-conf">
+        <div class="q-label"><span class="q-num">Q19</span> Avant de soumettre, cochez toutes les cases ci-dessous <span class="q-required">*</span></div>
+
+        <label class="conf-item" id="conf1-wrap" onclick="toggleConf(this)">
+          <input type="checkbox" name="conf1" id="conf1" value="oui"/>
+          <div class="conf-box" id="box1"></div>
+          <span class="conf-text">✅ Je comprends que COUTURLY est en phase de finalisation et que l'accès n'est pas immédiat.</span>
+        </label>
+
+        <label class="conf-item" id="conf2-wrap" onclick="toggleConf(this)">
+          <input type="checkbox" name="conf2" id="conf2" value="oui"/>
+          <div class="conf-box" id="box2"></div>
+          <span class="conf-text">🔒 Je m'engage à ne pas partager de captures d'écran ou d'informations sur l'application sans autorisation.</span>
+        </label>
+
+        <label class="conf-item" id="conf3-wrap" onclick="toggleConf(this)">
+          <input type="checkbox" name="conf3" id="conf3" value="oui"/>
+          <div class="conf-box" id="box3"></div>
+          <span class="conf-text">💬 Je m'engage à donner des retours honnêtes pendant les 30 jours de test.</span>
+        </label>
+
+        <label class="conf-item" id="conf4-wrap" onclick="toggleConf(this)">
+          <input type="checkbox" name="conf4" id="conf4" value="oui"/>
+          <div class="conf-box" id="box4"></div>
+          <span class="conf-text">📱 J'accepte d'être contacté(e) par WhatsApp au numéro fourni pour l'onboarding.</span>
+        </label>
+
+        <label class="conf-item" id="conf5-wrap" onclick="toggleConf(this)">
+          <input type="checkbox" name="conf5" id="conf5" value="oui"/>
+          <div class="conf-box" id="box5"></div>
+          <span class="conf-text">⭐ Je comprends que ma sélection n'est pas garantie — 20 places seulement, sélection sur dossier.</span>
+        </label>
+
+        <p class="err-msg" id="conf-err">Vous devez cocher toutes les cases pour soumettre votre candidature.</p>
+      </div>
+    </div>
+
+    <!-- ═══ SUBMIT ═══ -->
+    <div class="submit-wrap">
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span class="btn-text">✂ &nbsp; Soumettre ma candidature</span>
+        <div class="spinner"></div>
+      </button>
+    </div>
+
+  </form>
+
+  <!-- Footer -->
+  <div class="form-footer">
+    <p>
+      <strong>COUTURLY</strong> — Start-up SaaS · Cotonou, Bénin<br/>
+      📧 aaimee853@gmail.com &nbsp;·&nbsp; 📱 +229 01 63 33 92 75<br/>
+      <em>Vos données sont confidentielles et utilisées uniquement pour la sélection des bêta-testeurs.</em>
+    </p>
+  </div>
+
+</div>
+
+<!-- ── SUCCESS SCREEN ── -->
+<div id="success-screen">
+  <div class="success-circle">🎉</div>
+  <div class="success-title">Candidature reçue !</div>
+  <p class="success-body">
+    Merci de votre intérêt pour <strong>COUTURLY</strong>.<br/><br/>
+    Vous rejoignez notre liste d'attente prioritaire.<br/>
+    <strong>Dès que l'application est prête</strong>, vous recevrez un message WhatsApp personnalisé avec votre lien d'accès exclusif.<br/><br/>
+    Les 20 testeurs sont sélectionnés sur dossier. Vous serez informé(e) par WhatsApp de votre statut.
+  </p>
+  <div class="success-contact">
+    ✂ COUTURLY · aaimee853@gmail.com · +229 01 63 33 92 75
+  </div>
+</div>
+
+<script>
+// ── PROGRESS ──
+function updateProgress() {
+  const required = ['nom_complet','whatsapp','email','ville'];
+  const requiredRadios = ['experience','nb_clients','telephone','fonc_prioritaire','engagement_30j'];
+  const requiredTextareas = ['frustration','motivation'];
+
+  let filled = 0, total = required.length + requiredRadios.length + requiredTextareas.length + 1;
+
+  required.forEach(n => {
+    const el = document.querySelector(`[name="${n}"]`);
+    if(el && el.value.trim()) filled++;
+  });
+  requiredRadios.forEach(n => {
+    if(document.querySelector(`[name="${n}"]:checked`)) filled++;
+  });
+  requiredTextareas.forEach(n => {
+    const el = document.querySelector(`[name="${n}"]`);
+    if(el && el.value.trim().length > 10) filled++;
+  });
+  // conf
+  const allConf = ['conf1','conf2','conf3','conf4','conf5'].every(id => document.getElementById(id).checked);
+  if(allConf) filled++;
+
+  const pct = Math.round((filled/total)*100);
+  document.getElementById('prog-fill').style.width = pct+'%';
+  document.getElementById('prog-pct').textContent = pct+'%';
+
+  if(pct > 0) document.getElementById('progress-wrap').style.display='block';
+}
+
+document.querySelectorAll('input,textarea').forEach(el => {
+  el.addEventListener('change', updateProgress);
+  el.addEventListener('input', updateProgress);
+});
+
+// ── CONF TOGGLE ──
+function toggleConf(label) {
+  const cb = label.querySelector('input[type=checkbox]');
+  cb.checked = !cb.checked;
+  if(cb.checked) { label.classList.add('checked'); }
+  else { label.classList.remove('checked'); }
+  updateProgress();
+}
+// Prevent double toggle from label click
+document.querySelectorAll('.conf-item').forEach(item => {
+  item.addEventListener('click', function(e){ e.preventDefault(); toggleConf(this); });
+});
+
+// ── VALIDATION ──
+function validate() {
+  let ok = true;
+
+  // Text fields
+  const textRequired = [
+    {id:'qc1', name:'nom_complet'},
+    {id:'qc2', name:'whatsapp'},
+    {id:'qc3', name:'email'},
+    {id:'qc4', name:'ville'},
+  ];
+  textRequired.forEach(({id, name}) => {
+    const card = document.getElementById(id);
+    const input = document.querySelector(`[name="${name}"]`);
+    if(!input || !input.value.trim()) {
+      card.classList.add('error'); ok=false;
+    } else {
+      card.classList.remove('error');
+    }
+  });
+
+  // Email format
+  const emailEl = document.querySelector('[name="email"]');
+  if(emailEl && emailEl.value && !/\S+@\S+\.\S+/.test(emailEl.value)) {
+    document.getElementById('qc3').classList.add('error'); ok=false;
+  }
+
+  // Radio required
+  const radioRequired = [
+    {id:'qc6', name:'experience'},
+    {id:'qc7', name:'nb_clients'},
+    {id:'qc10', name:'telephone'},
+    {id:'qc14', name:'fonc_prioritaire'},
+    {id:'qc16', name:'engagement_30j'},
+  ];
+  radioRequired.forEach(({id, name}) => {
+    const card = document.getElementById(id);
+    if(!document.querySelector(`[name="${name}"]:checked`)) {
+      card.classList.add('error'); ok=false;
+    } else {
+      card.classList.remove('error');
+    }
+  });
+
+  // Textareas
+  const taRequired = [
+    {id:'qc13', name:'frustration'},
+    {id:'qc18', name:'motivation'},
+  ];
+  taRequired.forEach(({id, name}) => {
+    const card = document.getElementById(id);
+    const ta = document.querySelector(`[name="${name}"]`);
+    if(!ta || ta.value.trim().length < 10) {
+      card.classList.add('error'); ok=false;
+    } else {
+      card.classList.remove('error');
+    }
+  });
+
+  // Confidentialité
+  const allConf = ['conf1','conf2','conf3','conf4','conf5'].every(id => document.getElementById(id).checked);
+  const confCard = document.getElementById('qc-conf');
+  if(!allConf) {
+    confCard.classList.add('error'); ok=false;
+  } else {
+    confCard.classList.remove('error');
+  }
+
+  return ok;
+}
+
+// ── SUBMIT ──
+document.getElementById('betaForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  if(!validate()) {
+    // Scroll to first error
+    const firstErr = document.querySelector('.q-card.error');
+    if(firstErr) firstErr.scrollIntoView({ behavior:'smooth', block:'center' });
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  try {
+    const formData = new FormData(this);
+    const resp = await fetch(this.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if(resp.ok) {
+      document.getElementById('success-screen').classList.add('show');
+      window.scrollTo(0,0);
+    } else {
+      alert('Une erreur est survenue. Vérifiez votre connexion et réessayez.');
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    }
+  } catch(err) {
+    alert('Pas de connexion. Vérifiez votre réseau et réessayez.');
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
